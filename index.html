@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+<style>
+    @media screen and (max-width: 480px){
+    body{
+        background-color: white;
+    }
+}
+</style>
+</head>
+
+<body>
+    <div class="nombre">
+        <div class="img">
+            <img src="15.jpg" alt="fotoperfil">
+        </div>
+            <div class="contenido">
+                <p class="p1">Johnny Robinson</p>
+                <p class="p2">47 Años, Programador</p>
+            </div>
+    </div>
+    <div class="info">
+        <p class="titulo1">Información Personal</p>
+        <p class="titulo2">Nombre y Apellido: </p>
+        <p class="titulo3"> Johnny Robinson</p><br>
+        <p class="titulo2"> Email: </p>
+        <p class="titulo3"> johnny.robinson@ejemplo.com</p><br>
+        <p class="titulo2"> Dirección: </p>
+        <p class="titulo3"> 1604 W Pecan St</p><br>
+        <p class="titulo2"> Mi cumpleaños es: </p>
+        <p class="titulo3"> 5/8/1975</p><br>
+        <p class="titulo2"> Mi número de teléfono es: </p>
+        <p class="titulo3"> (825) 223-3921</p><br>
+    </div>
+    <div class="info">
+        <p class="titulo1">Experiencia</p>
+        <p class="titulo2">2017-01 - 2020-09 Administrativo contable
+            AITORIN PETANT SL:</p>
+        <p class="titulo3"> Gestión de facturación y contabilidad.
+                Pago de impuestos trimestrales y anuales.
+                Contacto con proveedores de forma semanal.
+                Planificación de los presupuestos anuales para cada departamento.</p><br>
+         <p class="titulo2">2015-07 - 2016-12 Administrativo TIPSA: </p>
+        <p class="titulo3">  Gestión del pago de nóminas y finiquitos a los trabajadores. Elaboración de contratos para nuevos empleados.
+            Gestión de la comunicación interna de la empresa.
+            Planificación de eventos trimestrales.</p><br>
+        </div>
+        <div class="info">
+            <p class="titulo1">Habilidades </p>
+            <p class="titulo2">Organización </p><br>
+            <p class="titulo2">Comunicación efectiva </p><br>
+            <p class="titulo2">Tramitación de impuestos</p><br>
+            <p class="titulo2">Atención al cliente </p><br>
+        </div>
+            <form id="form" action="" class="form">
+                <h3 class="tag"><span>HABLEMOS</span></h3>
+                <label for="name">Nombre Completo <span>*</span></label>
+                <input name="name" required type="text" id="name" placeholder="Juan">
+                <label for="email">Correo electrónico <span>*</span></label>
+                <input name="email" type="text" id="email" required placeholder="juan@gmail.com">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" id="" cols="30" rows="10"></textarea>
+                <button type="submit" class="btn primary full">Enviar mensaje</button>
+              </form>
+              <a href="mailto:diegossanchezz@gmai.com" id="trucazo"></a>
+              <script>
+                const $form = document.querySelector('#form')
+    const $buttonMailto = document.querySelector('#trucazo')
+
+    $form.addEventListener('submit', handleSubmit)
+
+    function handleSubmit(event) {
+      event.preventDefault()
+      const form = new FormData(this)
+      $buttonMailto.setAttribute('href', `mailto:diegossanchezz@gmail.com?subject=nombre ${form.get('name')}  correo ${form.get('email')}&body=${form.get('message')}`)
+      $buttonMailto.click()
+    }
+              </script>
+            
+    
+</body>
+
+</html>
